@@ -30,8 +30,9 @@ export const SignupController = async (req, res) => {
 export const LoginController = async (req, res) => {
   try {
     let ipInfo = { req };
-    await UpdateLastLocation(ipInfo, _id);
     let { err, token } = await loginUser(req.body);
+    let user = await User.findOne({ email: req.body.email });
+    await UpdateLastLocation(ipInfo, user._id);
     if (err) handleResError(res, err, 400);
     else handleResSuccess(res, "login successful", token, 201);
   } catch (err) {

@@ -22,7 +22,7 @@ export const createUser = async (userDetails) => {
         ...userDetails,
         password: pwHash,
       });
-      user = registeredUser.toJSON();
+      user = registeredUser;
       return { err, user };
     }
   } catch (err) {
