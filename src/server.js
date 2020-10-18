@@ -12,4 +12,6 @@ mongoose.connect(process.env.DB || "mongodb://localhost/nearby-api", {
 mongoose.connection.once("open", () => console.log("db connected!"));
 mongoose.connection.on("error", (err) => console.log(err));
 
-app.listen(7070, () => console.log(`nearby-api running on port ${port}`));
+app.listen(process.env.PORT || 7070, process.env.IP, () =>
+  console.log(`nearby-api running on port ${port}`)
+);
