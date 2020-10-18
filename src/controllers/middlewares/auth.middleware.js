@@ -4,7 +4,7 @@ export const checkIFUserIsLoggedIn = async (req, res, next) => {
   try {
     if (req.headers.authorization && req.headers.authorization.length > 0) {
       const token = req.headers.authorization.split(" ")[1];
-      const payload = await JWT.verify(token, process.env.JWT_SECRET_KEY);
+      const payload = await JWT.verify(token, process.env.secretKey);
       req.decoded = payload;
       next();
     } else {

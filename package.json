@@ -7,10 +7,12 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon -r esm ./src/server.js"
+    "dev": "cross-env NODE_ENV=development nodemon -r esm ./src/server.js",
+    "start": "node -r esm ./src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",

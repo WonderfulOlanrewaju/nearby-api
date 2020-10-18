@@ -49,12 +49,16 @@ export const loginUser = async (loginDetails) => {
           },
         };
       else {
-        let { id, email, isActive } = foundExistingUser;
+        let { _id, email, isActive } = foundExistingUser;
         let options = {
           expiresIn: "12h",
           issuer: "meetin-hasher",
         };
-        let token = await JWT.sign({ id, email, isActive }, secretKey, options);
+        let token = await JWT.sign(
+          { _id, email, isActive },
+          secretKey,
+          options
+        );
         return { token };
       }
     } else if (foundExistingUser === null) {

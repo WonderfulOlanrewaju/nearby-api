@@ -8,6 +8,7 @@ mongoose.connect("mongodb://localhost/nearby-api", {
   autoIndex: false,
   useCreateIndex: true,
 });
+
 mongoose.connection.once("open", () => console.log("db connected!"));
 mongoose.connection.on("error", (err) => console.log(err));
 
