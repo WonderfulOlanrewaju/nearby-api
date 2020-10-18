@@ -1,5 +1,6 @@
 import { createUser, loginUser } from "../utils/User.util";
 import { handleResError, handleResSuccess } from "../utils/response.util";
+import { User } from "../../models/User.model";
 import JWT from "jsonwebtoken";
 import dotenv from "dotenv";
 import { UpdateLastLocation } from "../utils/updateLastLocation";
