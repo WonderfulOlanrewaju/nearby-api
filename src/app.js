@@ -26,7 +26,7 @@ app.get("/nearbyusers", async (req, res) => {
             // coordinates: [6.5279623, 3.3910865999999997],
             coordinates: ipInfo.ll,
           },
-          $maxDistance: 10000,
+          $maxDistance: 100000,
         },
       },
     });

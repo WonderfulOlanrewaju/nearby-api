@@ -38,6 +38,10 @@ const UserSchema = new Schema({
   },
   lastLocation: {
     type: pointSchema,
+    default: {
+      type: "Point",
+      coordinates: [0, 0],
+    },
     index: "2dsphere",
   },
 });
